@@ -1,0 +1,91 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Calcule seu IMC</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <ion-card-content>
+            <ion-grid>
+
+                <ion-row>
+
+                    <ion-col>
+
+                        <ion-item>
+
+                            <ion-label position="floating">Seu peso</ion-label>
+                            <ion-icon name="calculator-sharp" slot="start"></ion-icon>
+                            <ion-input placeholder="69 Kg" type="number" [(ngModel)]="imcUser.peso"></ion-input>
+                        </ion-item>
+
+                    </ion-col>
+
+                </ion-row>
+            </ion-grid>
+
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+
+                        <ion-item>
+                            <ion-label position="floating">Sua altura</ion-label>
+                            <ion-icon name="body" slot="start"></ion-icon>
+                            <ion-input placeholder="1,70" type="number" [(ngModel)]="imcUser.altura"></ion-input>
+                        </ion-item>
+
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+
+
+    <ion-grid>
+
+        <ion-row>
+
+            <ion-col>
+                <ion-button expand="block" (click)="calculandoImc();">Calcular</ion-button>
+            </ion-col>
+
+        </ion-row>
+
+    </ion-grid>
+
+    <ion-card *ngIf="resultado>1">
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-text>
+                            <h3> Seu IMC é de: </h3>
+                        </ion-text>
+
+                        <ion-text>
+                            <p> {{resultado}} </p>
+                        </ion-text>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="resultado>1">
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <h3>Confira seu resultado: </h3>
+                        <img src="../assets/img/imc2.png" />
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>
